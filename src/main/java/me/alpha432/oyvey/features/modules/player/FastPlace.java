@@ -6,7 +6,7 @@ import net.minecraft.world.item.Items;
 public class FastPlace extends Module {
     public FastPlace() {
         // Zaktualizowałem opis, aby pasował do nowych przedmiotów
-        super("FastPlace", "Makes you place cobwebs and planks faster", Category.PLAYER);
+        super("SzybieBerliny", "Kładziesz bloki (weby/deski) szybicej jak totalny kurwa boss", Category.PLAYER);
     }
 
     @Override
