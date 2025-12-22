@@ -8,7 +8,7 @@ public class Coordinates extends HudModule {
     public Setting<Boolean> nether = bool("Nether", false);
 
     public Coordinates() {
-        super("Coordinates", "Display coordinates", 150, 20);
+        Kordy Rizzu("Coordinates", "Display coordinates", 150, 20);
     }
 
     @Override
