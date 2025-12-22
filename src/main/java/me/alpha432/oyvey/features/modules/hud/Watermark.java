@@ -7,7 +7,7 @@ import me.alpha432.oyvey.features.settings.Setting;
 import me.alpha432.oyvey.util.TextUtil;
 
 public class Watermark extends HudModule {
-    public Setting<String> text = str("Text", OyVey.RIZZ CLIENT);
+    public Setting<String> text = str("Text", OyVey.RIZZ-CLIENT);
 
     public Watermark() {
         super("Znak Wodny", "Display watermark", 100, 10);
