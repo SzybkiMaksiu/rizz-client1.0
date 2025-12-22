@@ -20,7 +20,7 @@ public class Tracers extends Module {
 
     public Tracers() {
         // Ustawienie kategorii na RENDER
-        super("Tracers", "Draws lines to nearby players", Category.RENDER);
+        super("Trakersy", "Draws lines to nearby players", Category.RENDER);
     }
 
     @Override
