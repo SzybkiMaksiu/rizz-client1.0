@@ -18,7 +18,7 @@ public class ESP extends Module {
     private final Setting<Float> lineWidth = num("LineWidth", 1.5f, 0.1f, 5.0f);
 
     public ESP() {
-        super("ESP", "Highlights players through walls", Category.RENDER);
+        super("SokoleOko", "Highlights players through walls", Category.RENDER);
     }
 
     // W Twoim kliencie ta metoda powinna być wywoływana z głównego managera renderowania
