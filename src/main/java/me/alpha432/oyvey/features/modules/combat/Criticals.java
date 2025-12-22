@@ -11,7 +11,7 @@ import net.minecraft.world.entity.boss.enderdragon.EndCrystal;
 
 public class Criticals extends Module {
     public Criticals() {
-        super("Criticals", "Makes you do critical hits", Category.COMBAT);
+        super("Bomby Tromby", "Makes you do critical hits", Category.COMBAT);
     }
 
     @Subscribe
