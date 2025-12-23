@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.13-SNAPSHOT'
+    id 'fabric-loom' version '1.9-SNAPSHOT' // Zaktualizowano dla wsparcia 1.21.4
     id 'maven-publish'
 }
 
@@ -9,6 +9,7 @@ group = project.maven_group
 repositories {
     mavenCentral()
     maven { url "https://jitpack.io" }
+    maven { url "https://maven.fabricmc.net/" }
 }
 
 loom {
@@ -20,7 +21,7 @@ dependencies {
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    // Fabric API
+    // Fabric API dla 1.21.4
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     include implementation("com.github.cattyngmd.catformat:catformat-core:${project.catformat_version}")
@@ -40,12 +41,11 @@ processResources {
     }
 }
 
+// Minecraft 1.21.4 wymaga Javy 21
 def targetJavaVersion = 21
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
-    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
-        it.options.release = targetJavaVersion
-    }
+    it.options.release = targetJavaVersion
 }
 
 java {
@@ -53,8 +53,6 @@ java {
     if (JavaVersion.current() < javaVersion) {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
     }
-
-    // (was: archivesBaseName = project.archives_base_name)
     withSourcesJar()
 }
 
@@ -73,9 +71,5 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
         }
-    }
-
-    repositories {
-        // Add publish targets here if needed
     }
 }
