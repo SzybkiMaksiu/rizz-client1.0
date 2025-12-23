@@ -1,6 +1,6 @@
 pluginManagement {
     repositories {
-        mavenLocal() // <--- DODAJ TO TUTAJ
+        mavenLocal() // Dodaj to tutaj
         maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
